@@ -8,5 +8,3 @@ data/weather_stations/**
 !data/weather_stations/.gitkeep
 data/ibuttons/**
 !data/ibuttons/.gitkeep
-data/processed**
-!data/processed/.gitkeep
