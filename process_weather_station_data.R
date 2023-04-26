@@ -1,42 +1,12 @@
 # Download, clean, and merge WTF weather station data and DRO weather data
 
-# Load packages and set working directory
-setwd("weather-flux")
+# Load packages
 library(googledrive)
 library(tidyverse)
 library(lubridate)
 library(modelr)
 
 ########## Download data from Google Drive ##########
-
-# Create local directories to store data
-# Creates: data/weather_stations/ and data/processed/weather_stations/,
-# data/ibuttons/ and data/processed/ibuttons/,
-make_ws_dirs <- function() {
-  if(!dir.exists("data/weather_stations/")){
-    message(paste("ATTENTION, This function is creating the following directory ", 
-                  getwd(),"/data/weather_stations/"))
-    dir.create("data/weather_stations/",recursive = TRUE)
-  }
-  
-  if(!dir.exists("data/processed/weather_stations/")){
-    message(paste("ATTENTION, This function is creating the following directory ", 
-                  getwd(),"/data/processed/weather_stations/"))
-    dir.create("data/processed/weather_stations/",recursive = TRUE)
-  }
-  if(!dir.exists("data/ibuttons/")){
-    message(paste0("ATTENTION, This function is creating the following directory ", 
-                   getwd(),"/data/ibuttons/"))
-    dir.create("data/ibuttons/",recursive = TRUE)
-  }
-  
-  if(!dir.exists("data/processed/ibuttons/")){
-    message(paste0("ATTENTION, This function is creating the following directory ", 
-                   getwd(),"/data/processed/ibuttons/"))
-    dir.create("data/processed/ibuttons/",recursive = TRUE)
-  }
-}
-make_ws_dirs()
 
 # Get files names for weather data from Google Drive
 drive_ls("WTFProject/data/weather_stations/Met_data_Current")
@@ -127,7 +97,7 @@ wthr_dat$site[wthr_dat$site=="stck"] <- "STCK"
 wthr_dat$site[wthr_dat$site=="mtlwrf"] <- "MLRF"
 wthr_dat$site[wthr_dat$site=="mtlwsc"] <- "MLES"
 wthr_dat$site[wthr_dat$site=="hq_awc"] <- "HQ_AWC"
-#write_csv(wthr_dat,"data/processed/weather_stations/wthr_WTF_10min_raw.csv")
+#write_csv(wthr_dat,"data/processed/wthr_WTF_10min_raw.csv")
 
 
 
@@ -326,7 +296,7 @@ wthr_dat6 <- wthr_dat5 %>%
             WS_ms_Avg= mean(WS_ms_Avg, na.rm = TRUE),
             WS_ms_Max= max(WS_ms_Max),
             WindDir_DU_WVT= mean(WindDir_DU_WVT, na.rm = TRUE))
-#write_csv(wthr_dat6,"data/processed/weather_stations/wthr_WTF_30min_clean.csv")
+#write_csv(wthr_dat6,"data/processed/wthr_WTF_30min_clean.csv")
 
 
 
@@ -458,7 +428,7 @@ ggplot(dro_data2,aes(date,VWC_Avg)) + geom_point(alpha=0.5)
 ggplot(dro_data2,aes(date,TSoil_Avg)) + geom_point(alpha=0.5)
 # The remaining far points in VWC and TSoil will not be removed as there is 
 # so little DRO data, it's unclear whether they are outliers
-#write_csv(dro_data2,"data/processed/weather_stations/dro_30min_clean.csv")
+#write_csv(dro_data2,"data/processed/dro_30min_clean.csv")
 
 # Merge dro data with main dataframe
 wthr <- bind_rows(wthr_dat6, dro_data2)
@@ -527,11 +497,11 @@ ggplot(mutate(ib_dat2,outlier=ifelse(ib_AirTC < 4 | ib_AirTC > 50,"Yes","No")),
 # View cleaned data
 ggplot(ib_dat3, aes(date,ib_AirTC_mean)) + geom_point(alpha=0.5,size=0.5) + 
   facet_wrap(site~.)
-#write_csv(ib_dat3,"data/processed/weather_stations/ib_30min_raw.csv")
+#write_csv(ib_dat3,"data/processed/ib_30min_raw.csv")
 
 # Merge with main dataframe
 wthr2 <- left_join(wthr, ib_dat3, by=c("site","date"))
-#write_csv(wthr2,"data/processed/weather_stations/wthr_ib_clean.csv")
+#write_csv(wthr2,"data/processed/wthr_ib_clean.csv")
 
 
 
@@ -587,7 +557,7 @@ is.nan.data.frame <- function(x)
 wthr4[is.nan(wthr4)] <- NA
 
 # Save final dataset
-write_csv(wthr4,"data/processed/weather_stations/wthr_1hr_clean.csv")
+write_csv(wthr4,"data/processed/wthr_1hr_clean.csv")
 
 
 

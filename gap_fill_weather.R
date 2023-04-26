@@ -1,13 +1,12 @@
 # Gap fill weather data using external databases
 
-# Load packages and set working directory
-setwd("weather-flux")
+# Load packages
 library(tidyverse)
 library(lubridate)
 library(modelr)
 
 # Read in data
-wthr_clean <- read_csv("data/processed/weather_stations/wthr_1hr_clean.csv") %>%
+wthr_clean <- read_csv("data/processed/wthr_1hr_clean.csv") %>%
   arrange(site,date)
 POWER <- read_csv("data/external_data/POWER_processed.csv") %>%
   arrange(site,date)
@@ -158,15 +157,4 @@ wthr_f5 <- wthr_f4 %>%
          solar_elevation,solar_azimuth,SZA,T2M,PRECTOTCORR,PS,RH2M,WS2M,Rain_mm,
          RH2M_norm,AirTC_Avg_lm,BP_mbar_Avg_lm,ib_AirTC_lm,Rain_mm_Tot_P,Rain_P_source,Rain_mm_Tot_C,Rain_C_source)
 
-write_csv(wthr_f5,"data/processed/weather_stations/wthr_1hr_final.csv")
-
-# Dataset with variables only relevant to the climate-flux project
-wthr_FMC <- wthr_f5 %>%
-  select(site,date,LON,LAT,FuelM_Avg,FMC_norm,AirTC_Avg,AirTC_source,Rain_mm_Tot,Rain_source,
-         BP_mbar_Avg,BP_source,RH_Avg,RH_source,WS_ms_Avg,WS_height,ib_AirTC_Avg,ib_source,
-         ALLSKY_SFC_SW_DWN,CLRSKY_SFC_SW_DWN,ALLSKY_SFC_LW_DWN,
-         solar_elevation,solar_azimuth,SZA,T2M,PRECTOTCORR,PS,RH2M,WS2M,RH2M_norm,AirTC_Avg_lm,BP_mbar_Avg_lm,
-         Rain_mm,Rain_mm_Tot_P,Rain_P_source,Rain_mm_Tot_C,Rain_C_source)
-write_csv(wthr_FMC,"data/processed/weather_stations/wthr_1hr_FMC.csv")
-
-
+write_csv(wthr_f5,"wthr_1hr_final.csv")

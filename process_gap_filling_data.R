@@ -1,7 +1,6 @@
 # Process external data used for gap filling
 
-# Load packages and set working directory
-setwd("weather-flux")
+# Load packages 
 library(tidyverse)
 library(lubridate)
 

@@ -2,8 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+WTF-Climate.Rproj
 *.DS_Store
 data/weather_stations/**
 !data/weather_stations/.gitkeep
 data/ibuttons/**
 !data/ibuttons/.gitkeep
+data/processed**
+!data/processed/.gitkeep
