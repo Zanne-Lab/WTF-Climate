@@ -15,8 +15,11 @@ The wthr_1hr_final.csv file contains the final dataset and the wthr_1hr_final_me
 
 ## Scripts
 process_dro_data.R : Reads in files from DRO and reformats for joining.
+
 process_weather_station_data.R : Downloads and reads WTF weather station and ibutton data, then cleans and combines it with DRO data.
+
 process_gap_filling_data.R : Downloads data from NASA, CHRS, and SILO for gap-filling.
+
 gap_fill_weather.R : Gap-fills WTF station data to generate the final dataset.
 
 ## Methods
