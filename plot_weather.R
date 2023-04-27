@@ -32,9 +32,11 @@ fig_aes <- theme_bw() +
 ########## Plots ##########
 #..Air temp/rainfall for each site ####
 png("figures/temp_rain.png",width=2000,height=2500,res=250)
-ggplot(wthr_final) + 
-  geom_line(aes(date,AirTC_Avg),stat="identity",color="red",alpha=0.5) + 
-  geom_bar(aes(date,Rain_mm_Tot),stat="identity",color="blue") + 
+ggplot() + 
+  geom_line(data=wthr_final,aes(date,AirTC_Avg),
+            stat="identity",color="red",alpha=0.5) + 
+  geom_bar(data=filter(wthr_final,Rain_mm_Tot>0),aes(date,Rain_mm_Tot),
+           stat="identity",color="blue") + 
   facet_grid2(fct_relevel(site,"DRO","MLRF","MLES","STCK","HQ_AWC","PNW")~.) +
   xlab(label = "Date") + 
   scale_y_continuous(name="Air Temperature (C)",
