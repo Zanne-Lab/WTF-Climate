@@ -10,6 +10,15 @@ This repository contains the code for constructing a 4-year climate dataset for 
 | AWC Brooklyn Sancutary Headquarters | HQ_AWC | -16.5831°N, 145.1860°E | dry savanna
 | Pennyweight Outstation | PNW | -16.57427°N, 144.9158°E | dry savanna
 
+## Data Use
+The wthr_1hr_final.csv file contains the final dataset and the wthr_1hr_final_metadata.xlsx file contains information on variable descriptions and completeness.
+
+## Scripts
+process_dro_data.R : Reads in files from DRO and reformats for joining.
+process_weather_station_data.R : Downloads and reads WTF weather station and ibutton data, then cleans and combines it with DRO data.
+process_gap_filling_data.R : Downloads data from NASA, CHRS, and SILO for gap-filling.
+gap_fill_weather.R : Gap-fills WTF station data to generate the final dataset.
+
 ## Methods
 ### In-situ weather
 We aimed to construct a time series of typical weather variables across our 4-year field experiment (June 2018-2022). For that purpose, Vaisala Weather Transmitters (WXT530) were set up at PNW, STCK, MLES, and MLRF in September 2018 at 1.5 m above ground. Weather variables were recorded at a 10-minute resolution from September 2018 to June 2022. We obtained DRO weather from a weather stations located on a crane 50 m above the forest floor and managed by the DRO research station. We combined data from two stations: a long-term station that operated at a 30-minute resolution from January 2018 to March 2022 (Vaisala WXT520), and a newer station that operated at 1-minute resolution from November 2020 onwards (Vaisala HMP60). Soil and fuel conditions were also measured at 30-minute resolution at each site (Campbell CS655, CS506, 10 h Fuel Moisture Stick). Fuel sticks were placed in mesh bags directly on the ground.
