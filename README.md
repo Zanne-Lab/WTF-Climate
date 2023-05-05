@@ -20,15 +20,12 @@ The wthr_1hr_final.csv file contains the final dataset and the wthr_1hr_final_me
 *Fig 1. Four-year time series of air temperature (red) and rainfall (blue) at all sites.*
 
 ## Scripts
-process_dro_data.R : Reads in files from DRO and reformats for joining.
-
-process_weather_station_data.R : Downloads and reads WTF weather station and ibutton data, then cleans and combines it with DRO data.
-
-process_gap_filling_data.R : Downloads data from NASA, CHRS, and SILO for gap-filling.
-
-gap_fill_weather.R : Gap-fills WTF station data to generate the final dataset.
-
-plot_weather.R : Plots weather data for quality assessment.
+To be executed in order:
+1. process_dro_data.R : Reads in files from DRO and reformats for joining.
+2. process_weather_station_data.R : Downloads and reads WTF weather station and ibutton data, then cleans and combines it with DRO data.
+3. process_gap_filling_data.R : Downloads data from NASA, CHRS, and SILO for gap-filling.
+4. gap_fill_weather.R : Gap-fills WTF station data to generate the final dataset.
+5. plot_weather.R : Plots weather data for quality assessment.
 
 ## Methods
 ### In-situ weather
