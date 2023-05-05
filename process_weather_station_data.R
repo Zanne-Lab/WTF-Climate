@@ -1,43 +1,13 @@
 # Download, clean, and merge WTF weather station data and DRO weather data
 
 # Load packages
-library(googledrive)
 library(tidyverse)
 library(lubridate)
 library(modelr)
 
-########## Download data from Google Drive ##########
-
-# Get files names for weather data from Google Drive
-drive_ls("WTFProject/data/weather_stations/Met_data_Current")
-ws_files <- drive_ls("WTFProject/data/weather_stations/Met_data_Current", 
-                     recursive = TRUE, pattern = ".dat|.csv")
-
-# Download files from drive 
-for(x in 1:length(ws_files$id)){
-  if(!file.exists(sprintf("data/weather_stations/%s",ws_files$name[x]))){
-    drive_download(ws_files$id[x],path = sprintf("data/weather_stations/%s",ws_files$name[x]))
-  } else {    message(paste0("File ", ws_files$name[x]," exist"))    }
-}
-
-# Get files names for ibutton data from Google Drive
-ib_files <- drive_ls("WTFProject/data/i_buttons", recursive = TRUE, pattern= ".txt")
-
-# Download files from drive
-dowload_ib_file <- function(x) {
-  if(!file.exists(sprintf("data/ibuttons/%s",x))){
-    drive_download(x,path = sprintf("data/ibuttons/%s",x))
-  } else {    message(paste0("File ", x," exists"))    }
-  
-}
-
-invisible(sapply(ib_files$name, dowload_ib_file,simplify = TRUE))
-
-detach("package:googledrive", unload = TRUE)
 
 
-
-########## Read in downloaded WTF weather station files ##########
+########## Read in WTF weather station files ##########
 weather_files <- list.files(path = "data/weather_stations",pattern = "ten_min",full.names = TRUE)
 
 read_wthr <- function(x) {
