@@ -43,7 +43,10 @@ We expected to observe the following rainfall gradient (highest to lowest): DRO 
 ![](figures/wthr_rain_comparison.png)
 *Fig 2. Monthly rainfall comparison between SILO (gray, dashed) and WTF-Climate (blue, solid) datasets. WTF-Climate points colored purple indicate months in which the majority of data was gap-filled using CHRS. Gap-filled data results in slight deviations from expected rainfall. Despite these descrepencies, the seasonal trend is consistent with that of the SILO database.*
 
-### Citations
+## Acknowledgements
+We thank the Australian Wildlife Conservancy and Daintree Rainforest Observatory of James Cook University for permission to access these sites. This work was conducted on the unceded territory of the Kuku Yalanji, Djabugay and Djungan peoples, who are the Traditional Owners of the land.
+
+## Citations
 1. Liddell, M. (2023): Daintree Rainforest, Cape Tribulation Weather Station Data 2006 - 2014. Version 1. Terrestrial Ecosystem Research Network. (Dataset). https://doi.org/10.25901/j733-m261
 2. Fallon, Beth, and Jeannine Cavender-Bares. “Leaf-Level Trade-Offs between Drought Avoidance and Desiccation Recovery Drive Elevation Stratification in Arid Oaks.” Ecosphere 9, no. 3 (2018): e02149. https://doi.org/10.1002/ecs2.2149.
 3. Matt Dancho and Davis Vaughan (2020). anomalize: Tidy Anomaly Detection. R package version 0.2.2. https://CRAN.R-project.org/package=anomalize.
