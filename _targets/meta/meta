@@ -1,0 +1,8 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+dro_met3|stem|da7e5646cbdfced7|b5da755450edb774|3926150a9c0c4aa0|399127607||t0s|f4066a65ff755f48|0|file|local|vector|||6.498||
+get_dro_soil|function|8f925adb66b9151b|||||||||||||||
+get_dro_vaisala_hmp60|function|241e684587377365|||||||||||||||
+get_dro_vaisala_wxt520|function|ee798deb7e8a4c76|||||||||||||||
+process_weather_stations|function|f8496927761fdeb1|||||||||||||||
+read_weather_stations|function|0c2ecc22ff38ff02|||||||||||||||
+wthr_dat|stem|6f00808a526e9600|dcd505199e28c152|5a0827119d7f0b63|1090295188||t19492.4771232324s|cc81a7537cb02258|59|rds|local|vector|||3.86||
