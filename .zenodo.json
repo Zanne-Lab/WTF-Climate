@@ -1,0 +1,53 @@
+
+{
+    "creators": [
+        {
+            "orcid": "0009-0000-1743-6474",
+            "affiliation": "Department of Biology, University of Washington, Seattle, Washington, USA; Department of Ecology and Evolutionary Biology, University of California Irvine, Irvine, California, USA",
+            "name": "Duan, Elizabeth S."
+        },
+        {
+            "orcid": "0000-0003-1510-6695",
+            "affiliation": "Department of Ecology and Evolutionary Biology, University of California Irvine, Irvine, California, USA",
+            "name": "Chavez Rodriguez, Luciana"
+        },
+        {
+            "orcid": "0000-0002-7083-0005",
+            "affiliation": "Commonwealth Scientific and Industrial Research Organisation, Brisbane, QLD, Australia",
+            "name": "Flores-Moreno, Habacuc"
+        },
+        {
+            "orcid": "0000-0003-3931-5766",
+            "affiliation": "College of Science and Engineering, James Cook University, Cairns, QLD, Australia",
+            "name": "Cheesman, Alexander W."
+        },
+        {
+            "orcid": "0000-0001-9754-8184",
+            "affiliation": "College of Science and Engineering, Centre for Tropical Environmental and Sustainability Science, James Cook University, Cairns, QLD, Australia",
+            "name": "Liddell, Michael J."
+        },
+        {
+            "orcid": "0000-0001-6379-9452",
+            "affiliation": "Biology Department, University of Miami, Miami, Florida, USA",
+            "name": "Zanne, Amy E."
+        },
+        {
+            "orcid": "0000-0003-4629-7842",
+            "affiliation": "Department of Ecology and Evolutionary Biology, University of California Irvine, Irvine, California, USA; Department of Earth System Science, University of California, Irvine, California, USA",
+          "name": "Allison, Steven D."
+        }
+    ],
+
+    "license": "MIT",
+
+    "title": "WTF Climate dataset: 4 years of weather data from tropical Queensland, Australia",
+
+    "communities": [
+        {"identifier": "wtf-project"}
+    ],
+
+    "keywords": ["climate", "weather", "tropical", "Queensland"],
+
+    "grants": [{"id":"DEB-1655759"}, {"id":"DEB-1655340"}, {"id":"NE/K01613X/1"}]
+}
+
