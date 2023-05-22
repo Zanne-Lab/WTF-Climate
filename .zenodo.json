@@ -44,7 +44,6 @@
         {"identifier": "wtf-project"}
     ],
     "keywords": ["climate", "weather", "tropical", "Queensland"],
-    "description": "This repository contains the code for constructing a 4-year climate dataset for the WTF project. Time series were constructed for 6 field sites in Queensland, Australia at 1 hour resolution.",
-    "grants": [{"id":"10.13039/100000001::DEB-1655759"}, {"id":"10.13039/100000001::DEB-1655340"}, {"id":"10.13039/100014013::NE/K01613X/1"}]
+    "description": "This repository contains the code for constructing a 4-year climate dataset for the WTF project. Time series were constructed for 6 field sites in Queensland, Australia at 1 hour resolution."
 }
 
