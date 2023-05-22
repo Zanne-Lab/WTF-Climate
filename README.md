@@ -1,4 +1,6 @@
 # WTF-Climate
+[![DOI](https://zenodo.org/badge/632764480.svg)](https://zenodo.org/badge/latestdoi/632764480)
+
 This repository contains the code for constructing a 4-year climate dataset for the WTF project. Time series were constructed for 6 field sites in Queensland, Australia at 1 hour resolution.
 
 | Site | Abbreviation | Coordinates | Type |
@@ -11,7 +13,10 @@ This repository contains the code for constructing a 4-year climate dataset for 
 | Pennyweight Outstation | PNW | -16.57427°N, 144.9158°E | dry savanna
 
 ## Data Usage
-This dataset is available under the MIT license. 
+This dataset is available under the MIT license. Please use the following citation:
+```bibtex
+Duan, Elizabeth S., Chavez Rodriguez, Luciana, Flores-Moreno, Habacuc, Cheesman, Alexander W., Liddell, Michael J., Zanne, Amy E., & Allison, Steven D. (2023). WTF Climate dataset: 4 years of weather data from tropical Queensland, Australia (v1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7958670
+```
 
 The wthr_1hr_final.csv file contains the final dataset and the wthr_1hr_final_metadata.xlsx file contains information on variable descriptions and completeness.
 
