@@ -146,7 +146,7 @@ wthr_f4 <- do.call(data.frame,wthr_solar) %>%
 ########## Save final dataset ##########
 
 wthr_f5 <- wthr_f4 %>%
-  mutate(WS_height = ifelse(is.na(WS_ms_Avg),NA,case_when(site=="DRO" ~ 50, TRUE ~ 1.5))) %>%
+  mutate(WS_height = ifelse(is.na(WS_ms_Avg),NA,case_when(site=="DRO" ~ 57, TRUE ~ 1.5))) %>%
   select(site,LON,LAT,elevation,date,YEAR,MM,DD,HR,
          PA_uS_Avg,FuelM_Avg,FMC_norm,VWC_Avg,EC_Avg,TSoil_Avg,Perm,PerAvg,
          AirTC_Avg,AirTC_source,AirTC_Max,AirTC_Min,Rain_mm_Tot,Rain_source,
